@@ -1,8 +1,8 @@
 package bgd.mapper;
 
 
-import bgd.domain.Review;
 import bgd.dto.ReviewDTO;
+import bgd.domain.Review;
 import org.springframework.stereotype.Component;
 
 @Component

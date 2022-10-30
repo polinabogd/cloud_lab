@@ -2,7 +2,6 @@ package bgd.service;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 public abstract class AbstractService<T, ID> {
     protected abstract JpaRepository<T, ID> getRepository();
@@ -12,7 +11,7 @@ public abstract class AbstractService<T, ID> {
     }
 
     public T getById(ID id) {
-        return getRepository().findById(id).orElse(null);
+        return getRepository().getById(id);
     }
 
     public T create(T object) {
@@ -27,9 +26,9 @@ public abstract class AbstractService<T, ID> {
         }
     }
 
-    public T delete(ID id) {
-        Optional<T> object = getRepository().findById(id);
-        getRepository().deleteById(id);
-        return (T) object;
+    public void deleteById(ID id) {
+        if (getRepository().findById(id).isPresent()) {
+            getRepository().deleteById(id);
+        }
     }
 }

@@ -1,7 +1,7 @@
 package bgd.mapper;
 
-import bgd.domain.Address;
 import bgd.dto.AddressDTO;
+import bgd.domain.Address;
 import org.springframework.stereotype.Component;
 
 @Component

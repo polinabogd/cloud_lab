@@ -1,7 +1,7 @@
 package bgd.mapper;
 
-import bgd.domain.Rating;
 import bgd.dto.RatingDTO;
+import bgd.domain.Rating;
 import org.springframework.stereotype.Component;
 
 @Component

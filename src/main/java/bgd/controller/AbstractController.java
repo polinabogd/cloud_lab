@@ -55,14 +55,13 @@ public abstract class AbstractController<T, DTO, ID> {
         }
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
-    public ResponseEntity<DTO> delete(@PathVariable ID id) {
+    @RequestMapping(method = RequestMethod.DELETE,
+            value = "/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable ID id) {
         if (getService().getById(id) != null) {
-            getService().delete(id);
+            getService().deleteById(id);
             return new ResponseEntity<>(HttpStatus.OK);
         }
-        else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }

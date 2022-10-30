@@ -1,7 +1,7 @@
 package bgd.mapper;
 
-import bgd.domain.User;
 import bgd.dto.UserDTO;
+import bgd.domain.User;
 import org.springframework.stereotype.Component;
 
 @Component

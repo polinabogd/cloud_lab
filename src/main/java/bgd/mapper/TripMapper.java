@@ -1,7 +1,7 @@
 package bgd.mapper;
 
-import bgd.domain.Trip;
 import bgd.dto.TripDTO;
+import bgd.domain.Trip;
 import org.springframework.stereotype.Component;
 
 @Component
